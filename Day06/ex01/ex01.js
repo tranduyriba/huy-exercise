@@ -13,7 +13,6 @@ function handleRegister(name, password, email) {
     }
 
     data.push(user)
-
 }
 
 function handleLogin(email, password) {

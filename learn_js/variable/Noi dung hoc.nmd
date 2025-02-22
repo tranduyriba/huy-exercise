@@ -1,0 +1,55 @@
+Buổi 1: 21/01/2025
+
+Biến
+
+Biến dùng để lưu trữ dữ liệu
+- Tên biến chỉ được phép chữ HOA, chữ thường, _ và $
+- Không được bắt đầu bằng số
+- Viết theo quy tắc camelCase
+- Không được trùng với các từ khóa cúa JS
+
+Khai báo biến cần sử dụng:
+- var (có thể hoisting được)
+- let (có thể hoisting nhưng không sử dụng hoisting được)
+- const 
+
+const a = 10;
+
+Sự khsac nhau giữa Var, let, const
+
+- Phạm Vi
+- hoisting (var. let)
+- Tái báo (let, var)
+- Khai báo lại (var)
+
+
+---
+## Toán tử
+1. Toán tử số học
+- Dấu + (có thể ép kiểu sang chuỗi khi + với chuỗi), -, *. /, % (chia lấy dư)., ** lũy thừa
+- ++, -- Tăng giảm 1
+
+2. Toán tử so sánh
+- >, <, >=, =<, ==, ===. !=, !==
+
+3. Toán tử gán: -=, +=. *=
+
+4. Toán tử Logic
+- &&, ||, !(not)
+
+5. Toán tử 3 ngôi
+
+let x = 10;
+
+let result 
+
+6. Toán tử Nullish 
+- Chỉ dùng để kiểm tra underfine và Nullish
+
+let b = 10 ?? underfine;
+
+
+7. Falsy: 0, null, undefined, false, NaN, "", (-0, 0n, document.all)
+8. Truthy: Còn lại
+
+9. Toán tử optional chaining (?.)

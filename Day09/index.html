@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đồng hồ thời gian thực</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+      }
+      #clock {
+        font-size: 2em;
+        margin: 20px;
+      }
+      #date {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+      }
+      button {
+        font-size: 1em;
+        padding: 10px;
+        margin: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Đồng hồ thời gian thực</h1>
+    <div id="date"></div>
+    <div id="clock"></div>
+    <button onclick="setFormat(12)">12 giờ</button>
+    <button onclick="setFormat(24)">24 giờ</button>
+
+    <script>
+      let format = 24;
+
+      function updateClock() {
+        const now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        console.log(minutes);
+        let seconds = now.getSeconds();
+        let period = "";
+
+        if (format === 12) {
+          period = hours >= 12 ? "CH" : "SA";
+          hours = hours % 12 || 12;
+        }
+
+        minutes = minutes.toString();
+        seconds = seconds.toString().padStart(2, "0");
+
+        document.getElementById("clock").textContent =
+          `${hours}:${minutes}:${seconds} ${period}`.trim();
+
+        const dateString = now.toLocaleDateString("vi-VN", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+        document.getElementById("date").textContent = dateString;
+      }
+
+      function setFormat(newFormat) {
+        format = newFormat;
+        updateClock();
+      }
+
+      setInterval(updateClock, 1000);
+      updateClock();
+    </script>
+  </body>
+</html>
